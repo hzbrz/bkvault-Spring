@@ -1,5 +1,6 @@
 package com.hasanz.BookVault.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -22,7 +23,8 @@ public class Author {
     private String name;
 
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
-    private List<Book> books;
+    // init the List so no null pointer exception in service adding books to author
+    private List<Book> books = new ArrayList<>();
 
     public Long getId() {
         return id;
