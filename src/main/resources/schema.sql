@@ -6,11 +6,10 @@ CREATE TABLE authors (
 CREATE Table books (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
-    author VARCHAR(255) NOT NULL,
     isbn VARCHAR(255) UNIQUE NOT NULL,
     publisher VARCHAR(255),
     price DECIMAL(10,2),
-    publishedDate DATE,
+    published_date DATE,
     author_id BIGINT,
     CONSTRAINT FK_books_author 
     FOREIGN KEY (author_id)
